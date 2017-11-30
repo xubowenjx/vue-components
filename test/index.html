@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../dist/countup.js"></script>
+    <link rel="stylesheet" href="../dist/bulma.css">
+</head>
+<body>
+    <div id="app">
+        <i-count-up 
+        :start="2017" 
+        :end="8888" 
+        :styles="{'font-size':'12em','color': '#4d63bc'}">
+        </i-count-up>
+        <i-button type="success" @click="show" text="success"></i-button>
+    </div>
+</body>
+<script>
+ new Vue({
+     el:'#app',
+     data:function() {
+         return {
+             
+         }
+     },
+     methods: {
+        show:function(){
+            alert('show');
+        }
+     }
+ });
+</script>
+</html>
