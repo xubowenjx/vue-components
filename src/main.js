@@ -1,23 +1,20 @@
 import Vue from 'vue'
 import CountUp from './components/CountUp/index.js'
 import Button from './components/Button/index.js'
- const components=[
+ const xbw={
   CountUp,
   Button
- ];
+ };
  const install = function(Vue, opts = {}) {
-  /* istanbul ignore if */
-  if (install.installed) return;
+  
 
-  components.map(component => {
-    Vue.component(component.name, component);
+  Object.keys(xbw).forEach(key => {
+      Vue.component(key, xbw[key]);
   });
-
+ 
 };
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 };
-export default{
-  CountUp
-}
+ export default Object.assign(xbw, {install});
