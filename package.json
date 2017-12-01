@@ -1,10 +1,11 @@
 {
   "name": "vue-xbw-ui",
   "description": "try to build vue components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "xubowen",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
@@ -13,7 +14,11 @@
     "countup.js": "^1.9.3",
     "vue": "^2.4.4"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/xubowenjx/vue-components.git"

@@ -1,2 +1,7 @@
 node_modules
 npm-debug.log
+src
+test
+.gitignore
+index.html
+webpack.config.js
