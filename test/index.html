@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="../node_modules/vue/dist/vue.js"></script>
-    <script src="../dist/countup.js"></script>
-    <link rel="stylesheet" href="../dist/bulma.css">
+    <script src="../dist/index.js"></script>
+    <link rel="stylesheet" href="../dist/index.css">
 </head>
 <body>
     <div id="app">
@@ -16,22 +16,28 @@
         :end="8888" 
         :styles="{'font-size':'12em','color': '#4d63bc'}">
         </i-count-up>
-        <i-button type="success" @click="show" text="success"></i-button>
+        <i-button type="success" @on-click="show" text="success"></i-button>
+        <i-button type="primary" @on-click="show" text="primary"></i-button>
+        <i-button type="warning" @on-click="show" text="warning"></i-button>
+        <i-button type="danger" @on-click="show" text="danger"></i-button>
     </div>
 </body>
 <script>
  new Vue({
-     el:'#app',
-     data:function() {
-         return {
-             
-         }
-     },
-     methods: {
-        show:function(){
-            alert('show');
-        }
+   el: '#app',
+   data: function () {
+     return {
+ 
      }
+   },
+   methods: {
+     show: function () {
+       alert('show');
+     },
+     ss: function () {
+         alert(1);
+     }
+   }
  });
 </script>
 </html>

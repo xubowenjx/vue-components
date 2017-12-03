@@ -1,0 +1,36 @@
+/********变量*********/
+@primary:#00c4a7;
+@success:#22c65b;
+@warning:#ffdb4a;
+@danger:#ff3860;
+.bgc(@color){
+    background-color: @color;
+    color: #fff;
+}
+/*------------------*/
+a.button{
+    display: inline-flex;
+    padding: 6px 12px;
+    color: #363636;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: border-color 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+    &:hover{
+        border-color: transparent;
+    }
+    &.primary{
+        .bgc(@primary);
+    }
+    &.danger{
+       .bgc(@danger);
+    }
+    &.success{
+        .bgc(@success);
+    }
+    &.warning{
+        .bgc(@warning);
+    }
+}

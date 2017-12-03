@@ -1,0 +1,32 @@
+/********变量*********/
+/*------------------*/
+a.button {
+  display: inline-flex;
+  padding: 6px 12px;
+  color: #363636;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a.button:hover {
+  border-color: transparent;
+}
+a.button.primary {
+  background-color: #00c4a7;
+  color: #fff;
+}
+a.button.danger {
+  background-color: #ff3860;
+  color: #fff;
+}
+a.button.success {
+  background-color: #22c65b;
+  color: #fff;
+}
+a.button.warning {
+  background-color: #ffdb4a;
+  color: #fff;
+}

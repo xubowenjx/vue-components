@@ -1,6 +1,8 @@
-var path = require('path')
-var webpack = require('webpack')
-
+var path = require('path');
+var webpack = require('webpack');
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -13,26 +15,32 @@ module.exports = {
   },
   externals: {
     vue: {
-        root: 'Vue',
-        commonjs: 'vue',
-        commonjs2: 'vue',
-        amd: 'vue'
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
     }
-},
+  },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },      {
+        use: ['vue-style-loader', 'css-loader']
+      },
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+       // enforce: 'pre',//是否在loader前监测，vue中我设为否
+        include: [path.join(__dirname, 'src')],
+        options: {
+            formatter: require('eslint-friendly-formatter')//错误输出格式
+        }
+    },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
+          loaders: {}
           // other vue-loader options go here
         }
       },
@@ -52,7 +60,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -65,7 +73,7 @@ module.exports = {
     hints: false
   }
   //devtool: '#eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
   //module.exports.devtool = '#source-map'
@@ -85,5 +93,5 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
-  ])
+  ]);
 }

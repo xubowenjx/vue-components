@@ -1,11 +1,11 @@
 <template>
-  <a class="button" :class="type?'is-'+type:''" @click="hanleClick">
+  <a class="button" :class="type?type:''" @click="hanleClick">
        {{text}}
   </a>
 </template>
 <script>
 export default {
-  name: 'i-button',
+  name: 'Button',
   props: {
     type: {
       type: String,
@@ -17,9 +17,9 @@ export default {
     }
   },
   methods: {
-    hanleClick: function(evt) {
-        this.$emit('click', evt);
+    hanleClick: function (evt) {
+      this.$emit('on-click', evt)
     }
   }
-};
+}
 </script>
