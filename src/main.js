@@ -20,6 +20,6 @@ const install = function(Vue, opts = {}) {
   }
 }
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue, { type: 'CDN' })
+  install(window.Vue, { type: 'CDN' });
 }
 export default Object.assign(xbw, { install })
